@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <head>
     <meta charset "UTF-8">
     <title>Frizio03 page - contatti</title>
@@ -36,6 +36,7 @@
     </style>
 </head>
 
+<html>
 <body>
   <!-- Navabar -->
   <div>
@@ -64,52 +65,64 @@
   
   <!-- Jumbotron -->
   <div class="jumbotron">
-    <h1><center>Contatti</center></h1>
-    <p><center>Compila il form qui soto per contattarmi! Ti rispondero via mail!</center></p>
-    <p><center>Oppure clicca sul bottone sottostante e raggiungi il mio profilo GitHub</center></p>
-    <div>
-      <center><a href="https://github.com/Frizio03" target="_blank" class="btn btn-primary" role="button">GitHub</a></center>
-    </div>
+    <h1><center>Il mio sito ti saluta!</center></h1>
+    <p><center>Compila il form qui sotto e interagisci con il mio sito internet grazie allo script</center></p>
+    <h2><center><span class="badge badge-pill badge-info">Forza! Esegui un test!</span></center></h2>
   </div>
 
   <!-- Form -->
   <div>
-    <form>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Name</span>
-        </div>
-        <input type="text" class="form-control">
+    <form action="/action_page.php">
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" class="form-control" id="nome" placeholder="Mario">
       </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Surname</span>
-        </div>
-        <input type="text" class="form-control">
+      <div class="form-group">
+        <label for="cognome">Cognome:</label>
+        <input type="text" class="form-control" id="cognome" placeholder="Rossi">
       </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Email addres</span>
-        </div>
-        <input type="text" class="form-control">
+      <div class="form-group">
+        <label for="anni">Anni:</label>
+        <input type="number" class="form-control" id="anni" placeholder="36">
       </div>
-      <div>
-        <center><a href="#" class="btn btn-success" role="button">Submit</a></center>
+      <div class="form-group">
+        <label for="city">Città:</label>
+        <input type="text" class="form-control" id="city" placeholder="Roma">
       </div>
+      <center><button onclick="saluta()" class="btn btn-success">Avvia!</button></center>
     </form>
+    
   </div>
 
   <div>
     <br/>
-      <div class="alert alert-warning alert-dismissible fade show">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <center><strong>ATTENZIONE:</strong> a causa di un imprevisto cliccando sul pulsante "submit" non accade nulla</center>
-      </div>
       <div class="alert alert-primary alert-dismissible fade show">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <center><strong>Alert!</strong> : webpage created by <i>Frizio03</i> on <a href="https://github.com/" target="_blank" class="alert-link">GitHub</a></center>
       </div>
     <br/>
+    <center><div class="alert alert-success alert-dismissible fade show" id="saluto">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div></center>
+  <br/>
   </div>
 
+  <p id="saluto"></p>
+
+  <script>
+    function saluta() {
+      var nome = document.getElementById("nome").value;
+      var cognome = document.getElementById("cognome").value;
+      var anni = document.getElementById("anni").value;
+      var city = document.getElementById("city").value;
+      if(anni < 18){
+        document.getElementById("saluto").innerHTML = "Ciao " + nome + " " + cognome + ". Sei nato a " + city + " e hai " + anni + " anni quindi sei minorenne.";
+      }
+      else{
+        document.getElementById("saluto").innerHTML = "Ciao " + nome + " " + cognome + ". Sei nato a " + city + " e hai " + anni + " anni quindi sei maggiorenne.";
+      }
+    }
+  </script>
+
 </body>
+</html>
