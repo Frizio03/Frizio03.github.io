@@ -71,7 +71,8 @@
   </div>
 
   <!-- Form -->
-  <div>
+  <form>
+    <div>
       <div class="form-group">
         <label for="nome">Nome:</label>
         <input type="text" class="form-control" id="nome" placeholder="Mario">
@@ -88,8 +89,9 @@
         <label for="city">Città:</label>
         <input type="text" class="form-control" id="city" placeholder="Roma">
       </div>
-      <center><button onclick="saluta()" class="btn btn-success">Avvia!</button></center>
-  </div>
+      <center><button type="button" onclick="saluta()" class="btn btn-success">Avvia!</button></center>
+    </div>
+  </form>
 
   <div>
     <br/>
@@ -99,7 +101,6 @@
       </div>
     <br/>
     <center><div class="alert alert-success alert-dismissible fade show" id="saluto">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
     </div></center>
   <br/>
   </div>
